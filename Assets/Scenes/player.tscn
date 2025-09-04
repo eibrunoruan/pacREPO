@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw8gen0uskbao"]
+
+[ext_resource type="Script" uid="uid://d0gbmnnkeyrq7" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
+[ext_resource type="Script" uid="uid://cehajkbatefsn" path="res://Assets/Scripts/animation_system.gd" id="2_38rej"]
+[ext_resource type="Texture2D" uid="uid://c433at28y7ax8" path="res://Assets/Sprites/Aluno.png" id="3_38rej"]
+
+[sub_resource type="Animation" id="Animation_7dd06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_23lac"]
+resource_name = "idle_down"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(37.61, 27.904, 27.808, 34.18)]
+}
+
+[sub_resource type="Animation" id="Animation_c3tg1"]
+resource_name = "idle_left"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(36.644, 358.661, 28.727, 35.256)]
+}
+
+[sub_resource type="Animation" id="Animation_w3t24"]
+resource_name = "idle_up"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(38.566, 291.389, 23.741, 35.81)]
+}
+
+[sub_resource type="Animation" id="Animation_6cd4h"]
+resource_name = "move_down"
+length = 1.75
+loop_mode = 1
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(237.503, 225.623, 31.9613, 34.6339), Rect2(137.722, 223.669, 27.639, 32.645), Rect2(237.64, 225.512, 31.899, 34.926), Rect2(338.124, 226.749, 31.476, 32.195), Rect2(435.816, 222.335, 27.321, 33.53), Rect2(534.62, 224.773, 31.574, 32.733), Rect2(636.997, 226.535, 27.339, 33.998), Rect2(735.505, 226.477, 27.92, 32.164)]
+}
+
+[sub_resource type="Animation" id="Animation_t1xgp"]
+resource_name = "move_left"
+length = 1.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(35.649, 92.665, 27.797, 36.567), Rect2(130.721, 93.396, 32.764, 36.463), Rect2(233.476, 89.728, 28.942, 31.721), Rect2(331.425, 88.708, 28.747, 36.855), Rect2(431.746, 92.581, 29.504, 36.33), Rect2(533.594, 92.595, 32.838, 37.567), Rect2(636.683, 86.599, 28.591, 34.621), Rect2(736.674, 87.723, 29.905, 34.889)]
+}
+
+[sub_resource type="Animation" id="Animation_38rej"]
+resource_name = "move_up"
+length = 1.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(40.026, 157.336, 23.26, 34.973), Rect2(139.666, 159.589, 23.792, 32.656), Rect2(238.875, 163.604, 24.476, 33.562), Rect2(338.434, 163.424, 23.833, 34.762), Rect2(439.641, 160.431, 23.914, 32.783), Rect2(539.748, 161.555, 23.9, 32.97), Rect2(637.769, 163.763, 24.628, 33.381), Rect2(737.533, 163.49, 25.921, 32.996)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7dd06"]
+_data = {
+&"RESET": SubResource("Animation_7dd06"),
+&"idle_down": SubResource("Animation_23lac"),
+&"idle_left": SubResource("Animation_c3tg1"),
+&"idle_up": SubResource("Animation_w3t24"),
+&"move_down": SubResource("Animation_6cd4h"),
+&"move_left": SubResource("Animation_t1xgp"),
+&"move_up": SubResource("Animation_38rej")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_egera"]
+radius = 13.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_7dd06")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="AnimationSystem" type="Node2D" parent="." node_paths=PackedStringArray("player_controller")]
+script = ExtResource("2_38rej")
+player_controller = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationSystem"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_7dd06")
+}
+autoplay = "idle_down"
+speed_scale = 1.6
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationSystem"]
+position = Vector2(-1, -16)
+texture = ExtResource("3_38rej")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_egera")
