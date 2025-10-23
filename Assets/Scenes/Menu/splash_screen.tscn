@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8tk4epoa8i4r"]
+
+[ext_resource type="Script" uid="uid://c5oat4ereo30b" path="res://Assets/Scripts/menu/splash_screen.gd" id="1_b43yd"]
+[ext_resource type="VideoStream" uid="uid://b1w358dsbko60" path="res://Assets/Videos/carregamento.ogv" id="2_b43yd"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b43yd")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_b43yd")
+autoplay = true
+expand = true
+bus = &"Musica"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8020833
+anchor_top = 0.8564815
+anchor_right = 0.9852431
+anchor_bottom = 0.9660494
+theme_override_font_sizes/font_size = 28
+text = "Carregando..."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Label"]
+wait_time = 3.5
+one_shot = true
+autostart = true
+
+[node name="Node" type="Node" parent="."]
+
+[connection signal="timeout" from="Label/Timer" to="." method="_on_timer_timeout"]

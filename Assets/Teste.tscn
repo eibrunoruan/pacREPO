@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwdlqxjbb0nu7"]
+
+[ext_resource type="TileSet" uid="uid://b78d726m6i66s" path="res://Assets/chao.tres" id="1_da80p"]
+[ext_resource type="PackedScene" uid="uid://dw8gen0uskbao" path="res://Assets/Scenes/player.tscn" id="2_slit6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_da80p")
+format = 2
+layer_0/name = "Chao"
+layer_1/name = "Decoração"
+
+[node name="Player" parent="." instance=ExtResource("2_slit6")]

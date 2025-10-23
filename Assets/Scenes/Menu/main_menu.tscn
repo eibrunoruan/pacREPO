@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=3 uid="uid://3bx5cdk0pq5q"]
+
+[ext_resource type="Script" uid="uid://cx5c2vq3ujve7" path="res://Assets/Scripts/menu/main_menu.gd" id="1_7tyjs"]
+[ext_resource type="VideoStream" uid="uid://vfspa4ndnyci" path="res://Assets/Videos/Loop-lobby-principal-sem-botões-_1_ .ogv" id="2_wsh7p"]
+[ext_resource type="AudioStream" uid="uid://fnwlbiglw5s2" path="res://Assets/music/Mystery & Suspense Background Music For Films & Documentaries (Free Download)  John Doe - LVKEHOUSE (youtube).mp3" id="3_wsh7p"]
+
+[sub_resource type="Theme" id="Theme_wsh7p"]
+default_base_scale = 1.06
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7tyjs")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_wsh7p")
+autoplay = true
+expand = true
+loop = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuPrincipalContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028645834
+anchor_top = 0.7515432
+anchor_right = 0.24739583
+anchor_bottom = 0.9074074
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="jogar" type="Button" parent="MenuPrincipalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(16.849718, 16.568003, 16.77929, 1)
+theme_override_font_sizes/font_size = 27
+text = "Jogar"
+
+[node name="sair" type="Button" parent="MenuPrincipalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+text = "Sair"
+
+[node name="configurações" type="Button" parent="MenuPrincipalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+text = "Configurações"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wsh7p")
+autoplay = true
+bus = &"Musica"
+
+[node name="configuracoescontainer" type="ColorRect" parent="."]
+light_mask = 3
+visibility_layer = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882354, 0.14901961, 0.21960784, 0.7490196)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="configuracoescontainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38975695
+anchor_top = 0.4290124
+anchor_right = 0.8867104
+anchor_bottom = 0.8170686
+offset_right = -133.80035
+offset_bottom = -58.770447
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.305, 1.305)
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelMusica" type="Label" parent="configuracoescontainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Volume da Música"
+
+[node name="MusicaSlider" type="HSlider" parent="configuracoescontainer/VBoxContainer"]
+modulate = Color(0.0968226, 0.65416956, 0.9999998, 1)
+layout_mode = 2
+
+[node name="Labelefeitos" type="Label" parent="configuracoescontainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume dos Efeitos"
+
+[node name="EfeitosSlider" type="HSlider" parent="configuracoescontainer/VBoxContainer"]
+modulate = Color(0.09803922, 0.654902, 1, 1)
+layout_mode = 2
+
+[node name="FullscreenCheck" type="CheckBox" parent="configuracoescontainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/checkbox_checked_color = Color(0, 1.698, 1.698, 1)
+theme_override_colors/checkbox_unchecked_color = Color(0.9498797, 4.1475244, 6.1823897, 1)
+text = "Tela Cheia"
+
+[node name="ResolutionButton" type="OptionButton" parent="configuracoescontainer/VBoxContainer"]
+modulate = Color(0.09803922, 0.654902, 1, 1)
+self_modulate = Color(0.09803922, 0.654902, 1, 1)
+layout_mode = 2
+
+[node name="VoltarButton" type="Button" parent="configuracoescontainer/VBoxContainer"]
+self_modulate = Color(0.4919696, 0.768765, 0.98815674, 1)
+layout_mode = 2
+theme = SubResource("Theme_wsh7p")
+text = "Voltar"
+
+[connection signal="pressed" from="MenuPrincipalContainer/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MenuPrincipalContainer/configurações" to="." method="_on_configurações_pressed"]

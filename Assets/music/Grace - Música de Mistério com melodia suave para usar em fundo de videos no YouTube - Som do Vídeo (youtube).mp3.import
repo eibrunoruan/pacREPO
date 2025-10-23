@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blak3f855mw86"
+path="res://.godot/imported/Grace - Música de Mistério com melodia suave para usar em fundo de videos no YouTube - Som do Vídeo (youtube).mp3-882c9d7b6d8f1393bd05905d881337fc.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Grace - Música de Mistério com melodia suave para usar em fundo de videos no YouTube - Som do Vídeo (youtube).mp3"
+dest_files=["res://.godot/imported/Grace - Música de Mistério com melodia suave para usar em fundo de videos no YouTube - Som do Vídeo (youtube).mp3-882c9d7b6d8f1393bd05905d881337fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
